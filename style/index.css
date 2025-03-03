@@ -1,0 +1,229 @@
+/* installations des polices */
+@font-face {
+    font-family: ArialRounded;
+    src: url("../font/arlrdbd.ttf");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'arial';
+    cursor: context-menu;
+    user-select: none;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom right, #e6eefa, #fff);
+    padding: 30px;
+}
+
+body header{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 5px #e5eefd;
+    border: 4px solid #fff;
+}
+
+body header h1{
+    font-size: 30pt;
+    color: #a5c9ff;
+    padding: 0 0 30px 0;
+    font-family: ArialRounded;
+}
+
+
+body header #add-form{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    width: 50%;
+    padding: 20px 0;
+}
+
+body header #add-form input{
+    border: none;
+    outline: none;
+    background: #fff;
+    box-shadow: 0 0 10px 2.5px #e5eefd;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14pt;
+    font-weight: 400;
+    letter-spacing: .75px;
+    width: 100%;
+    cursor: text;
+}
+
+body header #add-form input::placeholder{
+    color: #a5c9ff;
+    opacity: 0.5;
+}
+
+body header #add-form button{
+    background-color: #a5c9ff;
+    font-size: 25pt;
+    color: #fff;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 10px 2.5px #e5eefd;
+    padding: 8px;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+body article{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+}
+
+body article section{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    background: #fff;
+    padding: 5px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 5px #e5eefd;
+    border: 4px solid #fff;
+}
+
+body article section .stack{
+    color: #a5c9ff;
+    padding: 10px;
+    background-color: transparent;
+    width: 35%;
+    text-align: center;
+    border-radius: 15px;
+    font-size: 13pt;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all .25s ease-in-out;
+}
+body article section .stack.active{
+    color: #fff;
+    background-color: #a5c9ff;
+}
+
+body article .view ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    padding-top: 20px;
+}
+
+body article .view ul .void{
+    font-size: 15pt;
+    color: #000;
+    opacity: .2;
+    font-weight: 500;
+}
+
+body article .view ul li{
+    background: #fff;
+    box-shadow: 0 0 10px 2.5px #e5eefd;
+    padding: 10px;
+    border-radius: 5px;
+    width: 60%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body article .view ul li label{
+    height: 20px;
+    width: 20px;
+    border: 2px solid #a5c9ff;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body article .view ul li input[type="checkbox"]:checked ~ label::after{
+    content: '';
+    position: absolute;
+    background-color: #a5c9ff;
+    border: none;
+    border-radius: 3px;
+    height: 12px;
+    width: 12px;
+}
+
+body article .view ul li .about{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+    padding: 0 20px;
+}
+body article .view ul li .about .text{
+    font-size: 14pt;
+    padding: 5px 0;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    outline: none;
+}
+
+body article .view ul li.isCompleted .about .text{
+    text-decoration: line-through;
+    opacity: 0.2;
+    font-weight: 400;
+}
+body article .view ul li .about .date{
+    font-size: 12pt;
+    color: #000;
+    opacity: 0.2;
+    font-weight: 400;
+}
+
+body article .view ul li .setting{
+    display: flex;
+    align-items: s;
+}
+
+body article .view ul li .setting button{
+    background-color: #a5ffc0;
+    font-size: 15pt;
+    color: #fff;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 10px 2.5px #e5eefd;
+    padding: 8px;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+body article .view ul li .setting button#remove{
+    background: red;
+}
+body article .view ul li .setting button#edit{
+    background: transparent;
+    color: #a5c9ff;
+    border: 2px solid #a5c9ff;
+}
+
+body article .view ul li #confirm{
+    display: none;
+}
+
+body article .view ul li.isEditing button{
+    display: none;
+}
+body article .view ul li.isEditing #confirm{
+    display: flex;
+}
